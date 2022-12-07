@@ -1,40 +1,73 @@
 import styled from "styled-components"
-import GlobalStyle, { colors } from "../../style/utils"
+import GlobalStyle from "../../style/utils"
+import  '../../anims/animation.css'
+// import { useState } from "react"
 
-function Title (){
+import Wave from 'react-wavify'
+import ppcv from '../../asset/ppcv.jpg'
+import Links from "../Links"
 
+
+function Title ({ animOne }){
+
+    let className = 'anim1'
+    if(animOne){
+        className = 'anim1-active'
+    }
 
     return (
         <TitleContenor>
             <GlobalStyle />
-
-
+            <Links />
+            {/* <Logo /> */}
             <TitleWrapper>
-            <h1>LÉO TENEUL</h1>
-            <h2>Développeur Web</h2>
+            <img src={ppcv} alt="" />
+                <Test>
+                    <h1>LÉO TENEUL</h1>
+                    <h2>Développeur Web</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quam asperiores, perferendis culpa tenetur quo quia, laudantium recusandae obcaecati molestias 
+                        dignissimos in, consectetur pariatur sit  quos  necessitatibus quibusdam optio aut.<br /><br /> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia saepe quia atque rerum aliquam
+                        ducimus quae amet blanditiis tenetur dolorum ad, laborum quam debitis distinctio quisquam, eum excepturi eaque accusamu</p>
+
+                    <div>
+                    <button>HardSkills</button>
+                        <button>Me Contacter</button>
+                        
+                    </div>
+
+                </Test>
+
+                {/* <ImgLight><img src={light} alt="" /></ImgLight> */}
+                
+            
+
+            
+            
             </TitleWrapper>
 
-            <InformationWrapper>
-                <img src="" alt="" />
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cumque, error delectus distinctio nesciunt nemo ullam doloremque libero sint adipisci animi atque temporibus iusto architecto tenetur in perspiciatis rerum omnis!</p>
-            </InformationWrapper>
+            
+            
+            <Wavetwo fill="#e67920" options={{height:90, points: 20, speed: 0.2, amplitude: 40 }} className={className}>
+                
+            </Wavetwo>
+
+            
+            
+           
+            
+       
+
             
 
             
-
-
-            <TitleBackground>
-                <BackgroundSquare active={true} yellow />
-                <BackgroundSquare active={true} red />
-                <BackgroundSquare active={true} blu />
-                <BackgroundSquare active={true} green />
-
-            </TitleBackground>
         </TitleContenor>
     )
   
 
 }
+
+
+// Textes qui apparaissent devant
 
 
 const TitleContenor = styled.div`
@@ -45,74 +78,52 @@ padding: 100px;
 color: white;
 display: flex;
 flex-direction: column;
-justify-content: center;
+position: relative;
+overflow: hidden;
+
+`
+const Test = styled.div`
+display: flex;
+margin-left: 40px;
+flex-direction: column;
+`
+
+
+const Wavetwo = styled(Wave)`
+
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+position: absolute;
+box-shadow: inset 2px 1px 24px 12px rgba(0,0,0,0.74);
+
+margin: 450px 0 0 400px;
 
 
 
-
+path {
+  
+  stroke: #b64005;
+  stroke-width:50px;
+ 
+}
 
 `
 
 const TitleWrapper = styled.div`
 
-width: 30%;
-padding: 30px;
-z-index: 10;
-margin-bottom: 50px;
-background-color: ${colors.primary};
-box-shadow: 2px 1px 24px 12px rgba(0,0,0,0.74);
 
-
-`
-
-const InformationWrapper = styled.div`
-
-height: 60%;
-padding: 30px;
-z-index: 10;
-background-color: ${colors.primary};
-box-shadow: 2px 1px 24px 12px rgba(0,0,0,0.74);
-
-
-`
-
-const TitleBackground = styled.div`
-
-height: 100%;
-width: 100%;
-position: absolute;
-top: 0;
-left: 0;
-z-index: 5;
 display: flex;
+height: 50%;
+width: 60%;
+justify-content: space-between;
+margin-top: 50px;
 
+/* box-shadow: 2px 1px 24px 12px rgba(0,0,0,0.74); */
 
 `
 
-const BackgroundSquare = styled.div`
-
-background-color: ${colors.primary};
-height: 20%;
-width: 20%;
-box-shadow: inset 2px 1px 15px 5px #000000;
-
-
-${props => props.yellow &&  `
-background-color: ${colors};
-height: 40%;
-width: 50%;
-` };
-background: ${props => props.red &&  "red" };
-background: ${props => props.blu &&  "blue" };
-background: ${props => props.green &&  "green" };
-
-
-${({ active }) =>
-		active &&
-		`
-        opacity :1; 
-  `}
-`
 
 export default Title
 

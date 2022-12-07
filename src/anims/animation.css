@@ -1,0 +1,115 @@
+/* Slide in and off, of the bottom-right wave corner */
+
+@keyframes animOne {
+
+    from{
+        transform: rotate(-55deg)  scale(1.3) skew(20deg, 45deg) translateY(800px);
+    }
+    to{
+        transform: rotate(-55deg)  scale(1.3) skew(20deg, 45deg) translateY(20px);
+    }
+
+}
+
+@keyframes animOneOff {
+
+    from{
+        transform: rotate(-55deg)  scale(1.3) skew(20deg, 45deg) translateY(20px);
+    }
+    to{
+        transform: rotate(-55deg)  scale(1.3) skew(20deg, 45deg) translateY(800px);
+    }
+
+}
+
+.anim1{
+   
+    animation: animOne 4s forwards  ;
+}
+
+.anim1-active{
+    animation: animOneOff 4s forwards;
+}
+
+
+/* Slide In and off, of the flowing wave panel */
+
+@keyframes animTwoOff {
+    
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-200px);
+    }
+
+}
+
+@keyframes animTwo {
+
+    from{
+        transform: translateY(-200px);
+    }
+    
+    to{
+        transform: translateY(0px);
+    }
+
+}
+
+.anim2{
+   
+    
+    animation: animTwoOff 4s forwards;
+    
+    
+}
+
+.anim2-active{
+    
+    animation: animTwo 4s forwards;
+    
+}
+
+
+
+
+
+
+@keyframes animThreeOff {
+    
+    from{
+        transform: translateX(1920px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+
+}
+
+@keyframes animThree {
+
+
+    from{
+        transform:  translateX(0px);
+    }
+    to{
+        transform: translateX(1920px);
+    }
+    
+
+}
+
+.anim3{
+   
+    
+    animation: animThreeOff 4.5s forwards;
+    
+    
+}
+
+.anim3-active{
+    
+    animation: animThree 3.5s forwards;
+    
+}
