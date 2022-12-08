@@ -9,11 +9,12 @@ import Slides from "../components/Slides"
 function Home (){
 
     const [animOne, setAnimOne] = useState(false)
+    const [animTwo, setAnimTwo] = useState(false)
 
     useEffect(() => {
 
-        handleScroll(setAnimOne)
-    }, )
+        handleScroll(setAnimOne, setAnimTwo)
+    }, [])
     
     return(
         <HomeContenor>
@@ -21,7 +22,7 @@ function Home (){
 
             <SlideContainer id="slideContainer">
             <Title animOne={animOne}/>
-            <Technologies animOne={animOne}/>
+            <Technologies animOne={animOne} animTwo={animTwo}/>
             <Slides />
             <Slides />
             <Slides />
@@ -46,6 +47,7 @@ const SlideContainer = styled.div`
 
 height: 100vh;
 overflow-y: scroll;
+scroll-snap-type: y proximity;
 
 
 `

@@ -19,7 +19,7 @@ const SlidesContenor = styled.div`
 
 height: 100vh;
 background-color: ${colors.primary};
-
+scroll-snap-align: center;
 `
 
 export default Slides

@@ -80,6 +80,7 @@ display: flex;
 flex-direction: column;
 position: relative;
 overflow: hidden;
+scroll-snap-align: center;
 
 `
 const Test = styled.div`

@@ -37,9 +37,16 @@ h2{
     font-size: 30px;
     margin-bottom: 10px;
 }
+
+h3{
+    font-family: 'AlfaSlab';
+    letter-spacing: 3px;
+    font-weight: lighter;
+
+}
 p{
     font-family: 'AlfaSlab';
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     /* background-color: red; */
     
 }

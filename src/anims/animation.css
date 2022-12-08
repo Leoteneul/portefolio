@@ -28,7 +28,7 @@
 }
 
 .anim1-active{
-    animation: animOneOff 4s forwards;
+    animation: animOneOff 5s forwards;
 }
 
 
@@ -37,22 +37,20 @@
 @keyframes animTwoOff {
     
     from{
-        transform: translateY(0px);
-    }
+        height: 100%;    }
     to{
-        transform: translateY(-200px);
-    }
+        height: 0%;    }
 
 }
 
 @keyframes animTwo {
 
     from{
-        transform: translateY(-200px);
+        height: 0%;
     }
     
     to{
-        transform: translateY(0px);
+        height: 100%;
     }
 
 }
@@ -60,56 +58,71 @@
 .anim2{
    
     
-    animation: animTwoOff 4s forwards;
+    animation: animTwoOff 2s forwards ease-out;
     
     
 }
 
 .anim2-active{
     
-    animation: animTwo 4s forwards;
+    animation: animTwo 2s forwards ease-out;
     
 }
-
-
-
-
 
 
 @keyframes animThreeOff {
     
     from{
-        transform: translateX(1920px);
-    }
+        height: 100%;    }
     to{
-        transform: translateX(0px);
-    }
+        height: 0%;    }
 
 }
 
 @keyframes animThree {
 
-
     from{
-        transform:  translateX(0px);
-    }
-    to{
-        transform: translateX(1920px);
+        height: 0%;
     }
     
+    to{
+        height: 100%;
+    }
+
+}
+
+@keyframes anim3Opacity {
+
+    from{
+        opacity: 0.1;
+    }
+    
+    to{
+        opacity: 0.7;
+    }
 
 }
 
 .anim3{
    
     
-    animation: animThreeOff 4.5s forwards;
+    animation: animThreeOff 3s forwards ease-out;
     
     
 }
 
 .anim3-active{
     
-    animation: animThree 3.5s forwards;
+    animation: animThree 2s forwards ease-out;
     
 }
+
+.anim3Opacity{
+
+    animation: anim3Opacity 2s forwards;
+}
+
+
+
+
+
