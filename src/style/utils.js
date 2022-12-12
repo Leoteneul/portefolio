@@ -46,11 +46,15 @@ h3{
 }
 p{
     font-family: 'AlfaSlab';
+    color: white;
     /* margin-bottom: 50px; */
-    /* background-color: red; */
     
 }
-
+a{
+    color: ${colors.quaternary};
+    text-decoration: none;
+    font-family: 'AlfaSlab';
+}
 
 button{
     font-family: 'AlfaSlab';

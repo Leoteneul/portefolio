@@ -3,11 +3,11 @@ import { colors } from "../../style/utils"
 import '../../anims/animation'
 function TabContainer ({animTwo}){
     
-    let className = 'anim3'
+    let className = 'animBarOff'
     let className2 = ''
     if(animTwo){
-        className = 'anim3-active'
-        className2 = 'anim3Opacity'
+        className = 'animBarOn'
+        className2 = 'animGraphOpacity'
     }
 
     function handleHover(){

@@ -5,15 +5,19 @@ import GlobalStyle, { colors } from "../style/utils"
 import { useEffect, useState } from "react"
 import { handleScroll } from "../anims/animation"
 import Slides from "../components/Slides"
+import Project from "../components/Project"
+import ProjectTwo from "../components/Project/ProjectTwo"
 
 function Home (){
 
     const [animOne, setAnimOne] = useState(false)
     const [animTwo, setAnimTwo] = useState(false)
+    const [animThree, setAnimThree] = useState(false)
+    
 
     useEffect(() => {
 
-        handleScroll(setAnimOne, setAnimTwo)
+        handleScroll(setAnimOne, setAnimTwo, setAnimThree)
     }, [])
     
     return(
@@ -23,7 +27,7 @@ function Home (){
             <SlideContainer id="slideContainer">
             <Title animOne={animOne}/>
             <Technologies animOne={animOne} animTwo={animTwo}/>
-            <Slides />
+            <Project animThree={animThree}/>
             <Slides />
             <Slides />
             </SlideContainer>

@@ -1,4 +1,4 @@
-export function handleScroll( setAnimOne, setAnimTwo ){
+export function handleScroll( setAnimOne, setAnimTwo, setAnimThree ){
 
     var scroll = document.querySelector('#slideContainer')
     var halfSlide = scroll.children[1].offsetHeight / 2
@@ -31,6 +31,20 @@ export function handleScroll( setAnimOne, setAnimTwo ){
         if(scroll.scrollTop > (halfSlide - 1) * 3 && scroll.scrollTop < halfSlide * 4){
             
             setAnimTwo(false)
+            setAnimThree(false)
+            
+            
+        }
+
+        if(scroll.scrollTop > (halfSlide - 1) * 4 && scroll.scrollTop < halfSlide * 5){
+            
+            setAnimThree(true)
+            
+            
+        }
+        if(scroll.scrollTop > (halfSlide - 1) * 5 && scroll.scrollTop < halfSlide * 6){
+            
+            setAnimThree(false)
             
             
         }

@@ -10,9 +10,9 @@ import Links from "../Links"
 
 function Title ({ animOne }){
 
-    let className = 'anim1'
+    let className = 'displayWaveOn'
     if(animOne){
-        className = 'anim1-active'
+        className = 'displayWaveOff'
     }
 
     return (
