@@ -21,16 +21,16 @@ function Title ({ animOne }){
             <Links />
             {/* <Logo /> */}
             <TitleWrapper>
-            <img src={ppcv} alt="" />
+            <ProfilImg src={ppcv} alt="" />
                 <Test>
                     <h1>LÉO TENEUL</h1>
                     <h2>Développeur Web</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quam asperiores, perferendis culpa tenetur quo quia, laudantium recusandae obcaecati molestias 
+                    <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quam asperiores, perferendis culpa tenetur quo quia, laudantium recusandae obcaecati molestias 
                         dignissimos in, consectetur pariatur sit  quos  necessitatibus quibusdam optio aut.<br /><br /> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia saepe quia atque rerum aliquam
-                        ducimus quae amet blanditiis tenetur dolorum ad, laborum quam debitis distinctio quisquam, eum excepturi eaque accusamu</p>
+                        ducimus quae amet blanditiis tenetur dolorum ad, laborum quam debitis distinctio quisquam, eum excepturi eaque accusamu</Text>
 
                     <div>
-                    <button>HardSkills</button>
+                        <button>HardSkills</button>
                         <button>Me Contacter</button>
                         
                     </div>
@@ -88,7 +88,21 @@ display: flex;
 margin-left: 40px;
 flex-direction: column;
 `
+const ProfilImg = styled.img`
 
+height: 90%;
+width: 30%;
+object-fit: cover;
+object-position: bottom;
+
+`
+
+const Text = styled.p`
+
+margin-bottom: 30px;
+
+
+`
 
 const Wavetwo = styled(Wave)`
 

@@ -194,3 +194,25 @@
 }
 
 
+.tagcloud{
+    background-color: rgba(55, 137, 160, 0.1);
+    box-shadow: inset 25px 25px 19px 10px rgba(255, 255, 255, 0.041), inset 0px 0px 24px 19px rgba(0, 0, 0, 0.1), inset 25px 25px 22px -11px rgba(255, 255, 255, 0.1), 0px 0px 30px 19px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    transform: rotate3d(1, 1, 1, 10deg);
+    font-size: 25px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.887);
+    overflow: hidden;
+    
+    
+
+}
+
+.tagcloud--item{
+    text-shadow: 1px 1px 4px #4FCCFF;
+    font-family: 'AlfaSlab';
+    letter-spacing: 2px;
+    font-weight: lighter;
+}

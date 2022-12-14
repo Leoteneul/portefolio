@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import { handleScroll } from "../anims/animation"
 import Slides from "../components/Slides"
 import Project from "../components/Project"
-import ProjectTwo from "../components/Project/ProjectTwo"
+import Qualities from "../components/Qualities"
 
 function Home (){
 
@@ -28,7 +28,7 @@ function Home (){
             <Title animOne={animOne}/>
             <Technologies animOne={animOne} animTwo={animTwo}/>
             <Project animThree={animThree}/>
-            <Slides />
+            <Qualities />
             <Slides />
             </SlideContainer>
             
