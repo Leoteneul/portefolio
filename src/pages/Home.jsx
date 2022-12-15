@@ -13,11 +13,12 @@ function Home (){
     const [animOne, setAnimOne] = useState(false)
     const [animTwo, setAnimTwo] = useState(false)
     const [animThree, setAnimThree] = useState(false)
+    const [animFour, setAnimFour] = useState(false)
     
 
     useEffect(() => {
 
-        handleScroll(setAnimOne, setAnimTwo, setAnimThree)
+        handleScroll(setAnimOne, setAnimTwo, setAnimThree, setAnimFour)
     }, [])
     
     return(
@@ -28,7 +29,7 @@ function Home (){
             <Title animOne={animOne}/>
             <Technologies animOne={animOne} animTwo={animTwo}/>
             <Project animThree={animThree}/>
-            <Qualities />
+            <Qualities animFour={animFour}/>
             <Slides />
             </SlideContainer>
             

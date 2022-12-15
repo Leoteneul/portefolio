@@ -37,7 +37,6 @@ function Title ({ animOne }){
 
                 </Test>
 
-                {/* <ImgLight><img src={light} alt="" /></ImgLight> */}
                 
             
 

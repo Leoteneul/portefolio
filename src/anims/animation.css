@@ -194,6 +194,102 @@
 }
 
 
+
+/* Neon flashing ON/OFF */
+
+@keyframes neonFlashingOn {
+
+    from{ opacity: 0; }
+    10%{ opacity: 0; }
+    15%{ opacity: 1; }
+    20%{ opacity: 0; }
+    25%{ opacity: 1; }
+    30%{ opacity: 0; }
+    32%{ opacity: 1; }
+    40%{ opacity: 1; }
+    45%{ opacity: 0; }
+    to{ opacity: 1; }
+}
+
+.neonFlashOn{
+
+    animation: neonFlashingOn 5s;
+}
+
+.neonFlashOff{
+
+    display: none;
+}
+
+@keyframes neonFlashing2On {
+
+    from{ opacity: 0; }
+    10%{ opacity: 0; }
+    15%{ opacity: 0.1; }
+    20%{ opacity: 0; }
+    25%{ opacity: 0.1; }
+    30%{ opacity: 0; }
+    32%{ opacity: 0.1; }
+    40%{ opacity: 0.1; }
+    45%{ opacity: 0; }
+    to{ opacity: 0.1; }
+}
+
+.neonFlash2On{
+
+    animation: neonFlashing2On 5s;
+}
+
+.neonFlash2Off{
+
+    display: none;
+}
+
+
+@keyframes neonFlashing3On {
+
+    from{ opacity: 0; }
+    10%{ opacity: 0; }
+    15%{ opacity: 0.05; }
+    20%{ opacity: 0; }
+    25%{ opacity: 0.05; }
+    30%{ opacity: 0; }
+    32%{ opacity: 0.05; }
+    40%{ opacity: 0.05; }
+    45%{ opacity: 0; }
+    to{ opacity: 0.05; }
+}
+
+.neonFlash3On{
+
+    animation: neonFlashing3On 5s;
+}
+
+.neonFlash3Off{
+
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .tagcloud{
     background-color: rgba(55, 137, 160, 0.1);
     box-shadow: inset 25px 25px 19px 10px rgba(255, 255, 255, 0.041), inset 0px 0px 24px 19px rgba(0, 0, 0, 0.1), inset 25px 25px 22px -11px rgba(255, 255, 255, 0.1), 0px 0px 30px 19px rgba(0, 0, 0, 0.4);
@@ -208,6 +304,11 @@
     
     
 
+}
+
+.text-shpere{
+    position: relative;
+    
 }
 
 .tagcloud--item{

@@ -24,6 +24,8 @@ const GlobalStyle = createGlobalStyle`
     
 }
 
+
+
 h1{
     font-size: 45px;
     font-family: 'AlfaSlab';
