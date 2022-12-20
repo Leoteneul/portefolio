@@ -272,8 +272,35 @@
 
 
 
+/* Phone Moving ON/OFF */
 
 
+
+
+@keyframes phoneMoveOn {
+
+    from{
+        transform: rotate(-10deg); 
+    }
+
+    50%{
+        transform: rotate(10deg);
+    }
+    
+    to{
+        transform: rotate(-10deg);
+    }
+}
+
+
+
+.phoneMoveOn{
+
+
+    animation: phoneMoveOn 6s infinite;
+
+
+}
 
 
 

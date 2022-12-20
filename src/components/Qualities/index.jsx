@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import { colors } from "../../style/utils"
-import TagCloud from "TagCloud";
 import { useEffect } from "react";
 import '../../anims/animation.css'
+const TagCloud = require('TagCloud');
 
 
 
@@ -11,6 +11,7 @@ function Qualities ({ animFour }){
   let className = 'neonFlashOff'
   let className2 = 'neonFlash2Off'
   let className3 = 'neonFlash3Off'
+  
   if(animFour){
       className = 'neonFlashOn'
       className2 = 'neonFlash2On'
@@ -21,6 +22,7 @@ function Qualities ({ animFour }){
         // Animation settings for Text Cloud
         useEffect(() => {
           return () => {
+            
             const container = ".tagcloud";
             const texts = [
               "HTML",
@@ -76,7 +78,7 @@ function Qualities ({ animFour }){
             <ContentWrapper>
                 <div className="text-shpere">
                 <span className="tagcloud"></span>
-                <AbsoluteCircle className={className2}/>
+                {/* <AbsoluteCircle className={className2}/> */}
                 
              </div>
              <TextContenor>

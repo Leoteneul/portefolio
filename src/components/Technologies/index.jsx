@@ -7,9 +7,9 @@ import TabContainer from "./TabContainer"
 function Technologies ({animOne, animTwo}){
     
     
-    let className2 = 'waveFlowOn'
+    let className2 = 'waveFlowOff'
     if(animOne){
-        className2 = 'waveFlowOff'
+        className2 = 'waveFlowOn'
     }
 
 

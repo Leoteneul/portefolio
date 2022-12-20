@@ -14,19 +14,11 @@ function TabContainer ({animTwo}){
 
 
         const bars = document.querySelectorAll('.itemContainer')
-        console.log(bars)
         bars.forEach(bar => {
             const text = bar.querySelector('p')
-            console.log(text)
             bar.addEventListener('mouseover', function(){
                 
-                    
-                    text.style.display = 'flex'
-                
-                
-            
-                console.log('hey')
-        
+                text.style.display = 'flex'        
             })
 
             bar.addEventListener('mouseout', function(){

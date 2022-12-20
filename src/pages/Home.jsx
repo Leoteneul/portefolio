@@ -4,21 +4,22 @@ import Title from "../components/Title"
 import GlobalStyle, { colors } from "../style/utils"
 import { useEffect, useState } from "react"
 import { handleScroll } from "../anims/animation"
-import Slides from "../components/Slides"
 import Project from "../components/Project"
 import Qualities from "../components/Qualities"
+import Contact from "../components/Contact"
 
 function Home (){
 
-    const [animOne, setAnimOne] = useState(false)
+    const [animOne, setAnimOne] = useState(true)
     const [animTwo, setAnimTwo] = useState(false)
     const [animThree, setAnimThree] = useState(false)
     const [animFour, setAnimFour] = useState(false)
+    const [animFive, setAnimFive] = useState(false)
     
 
     useEffect(() => {
 
-        handleScroll(setAnimOne, setAnimTwo, setAnimThree, setAnimFour)
+        handleScroll(setAnimOne, setAnimTwo, setAnimThree, setAnimFour, setAnimFive)
     }, [])
     
     return(
@@ -26,11 +27,13 @@ function Home (){
             <GlobalStyle />
 
             <SlideContainer id="slideContainer">
+
             <Title animOne={animOne}/>
             <Technologies animOne={animOne} animTwo={animTwo}/>
             <Project animThree={animThree}/>
             <Qualities animFour={animFour}/>
-            <Slides />
+            <Contact animFive={animFive}/>
+
             </SlideContainer>
             
             

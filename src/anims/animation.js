@@ -1,64 +1,43 @@
-export function handleScroll( setAnimOne, setAnimTwo, setAnimThree, setAnimFour ){
+export function handleScroll( setAnimOne, setAnimTwo, setAnimThree, setAnimFour, setAnimFive ){
 
-    var scroll = document.querySelector('#slideContainer')
-    var halfSlide = scroll.children[1].offsetHeight / 2
-
-    
-    
-    console.log('demi', halfSlide)
+    const slidesContainer = document.querySelector('#slideContainer')
+    const slide = slidesContainer.children
       
-    scroll.addEventListener( 'scroll' , function(){
+    slidesContainer.addEventListener( 'scroll' , function(){
+        const scroll = slidesContainer.scrollTop
         
-        if(scroll.scrollTop < halfSlide){
+        setAnimOne(true)
+        
+
+        if(scroll > slide[1].offsetTop / 2){
+            
             setAnimOne(false)
-        }
-
-        if(scroll.scrollTop > halfSlide && scroll.scrollTop < halfSlide * 2){
-            
-            console.log('hello')
-            setAnimOne(true)
             setAnimTwo(false)
-            
         }
 
-        if(scroll.scrollTop > (halfSlide - 1) * 2 && scroll.scrollTop < halfSlide * 3){
-            console.log('hello2222')
+        if(scroll >= slide[1].offsetTop){
+
             setAnimTwo(true)
-            
-            
+            setAnimThree(false)
         }
         
-        if(scroll.scrollTop > (halfSlide - 1) * 3 && scroll.scrollTop < halfSlide * 4){
+        if(scroll === slide[2].offsetTop){
             
             setAnimTwo(false)
-            setAnimThree(false)
-            
-            
-        }
-
-        if(scroll.scrollTop > (halfSlide - 1) * 4 && scroll.scrollTop < halfSlide * 5){
-            
             setAnimThree(true)
             setAnimFour(false)
-            
-            
         }
-        if(scroll.scrollTop > (halfSlide - 1) * 5 && scroll.scrollTop < halfSlide * 6){
+
+        if(scroll === slide[3].offsetTop){
             
             setAnimThree(false)
             setAnimFour(true)
-            
-            
+            setAnimFive(false)
         }
-        console.log(scroll.scrollTop)
-
+        if(scroll >= slide[4].offsetTop){
+            
+            setAnimFour(false)
+            setAnimFive(true)
+        }
     })
-
-    
-    
-   
-    
-
-
-
 }
