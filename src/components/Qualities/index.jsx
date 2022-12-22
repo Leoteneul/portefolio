@@ -1,8 +1,7 @@
 import styled from "styled-components"
 import { colors } from "../../style/utils"
-import { useEffect } from "react";
 import '../../anims/animation.css'
-const TagCloud = require('TagCloud');
+import TagCloud from './TagCloud';
 
 
 
@@ -17,54 +16,7 @@ function Qualities ({ animFour }){
       className2 = 'neonFlash2On'
       className3 = 'neonFlash3On'
   }
-
-    
-        // Animation settings for Text Cloud
-        useEffect(() => {
-          return () => {
-            
-            const container = ".tagcloud";
-            const texts = [
-              "HTML",
-              ".",
-              "CSS",
-              ".",
-              "SASS",
-              ".",
-              "JavaScript",
-              ".",
-              "React",
-              ".",
-              "NodeJS",
-              ".",
-              "Babel",
-              ".",
-              "Jquery",
-              ".",
-              "ES6",
-              ".",
-              "GIT",
-              ".",
-              "GITHUB",
-              ".",
-             
-
-
-              
-            ];
-      
-            const options = {
-              radius: 350,
-              maxSpeed: "fast",
-              initSpeed: "normal",
-              keep: true,
-            };
-      
-            TagCloud(container, texts, options);
-          };
-        }, []);
-
-    
+  
     return (
         <QualitiesContenor>
           <Test className={className3}/>
@@ -76,9 +28,9 @@ function Qualities ({ animFour }){
           </NeonWrapper>
 
             <ContentWrapper>
-                <div className="text-shpere">
-                <span className="tagcloud"></span>
-                {/* <AbsoluteCircle className={className2}/> */}
+                <div className="tagcloud">
+                <AbsoluteCircle className={className2}/>
+                <TagCloud />
                 
              </div>
              <TextContenor>
@@ -175,7 +127,7 @@ position: absolute;
 top: 60px;
 left: 0;
 opacity: 0.1;
-z-index: 90;
+z-index: -2;
 transform: rotate(-40deg);
 border-top: 15px solid ${colors.secondary};
 `
@@ -189,7 +141,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 `
-
 
 
 
