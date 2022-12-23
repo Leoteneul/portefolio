@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { colors } from "../../style/utils"
 import phone from '../../asset/phone.png'
+import Mailer from "./Mailer"
+
 
 function Contact ({ animFive }){
 
@@ -9,17 +11,21 @@ function Contact ({ animFive }){
         className = 'phoneMoveOn'
     }
 
+    
+
+
+
+
     return (
         <ContactContenor>
             
             <PhonePicture src={phone} alt="" className={className}/>
             <Text>
                 <h2>Me Contacter</h2>
-                <Form action="">
-                
-
-                </Form>
                 <p>leoteneul@gmail.com</p>
+
+                <Mailer></Mailer>
+                
             </Text>
         </ContactContenor>
     )
@@ -32,7 +38,6 @@ const ContactContenor = styled.div`
 
 height: 100vh;
 background-color: ${colors.primary};
-scroll-snap-align: center;
 
 display: flex;
 justify-content: center;

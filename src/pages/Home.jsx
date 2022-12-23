@@ -8,6 +8,7 @@ import Project from "../components/Project"
 import Qualities from "../components/Qualities"
 import Contact from "../components/Contact"
 
+
 function Home (){
 
     const [animOne, setAnimOne] = useState(true)
