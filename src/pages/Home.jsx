@@ -1,12 +1,13 @@
 import styled from "styled-components"
 import Technologies from "../components/Technologies"
 import Title from "../components/Title"
-import GlobalStyle, { colors } from "../style/utils"
+import GlobalStyle, { colors, screenSize } from "../style/utils"
 import { useEffect, useState } from "react"
 import { handleScroll } from "../anims/animation"
 import Project from "../components/Project"
 import Qualities from "../components/Qualities"
 import Contact from "../components/Contact"
+import Links from "../components/Links"
 
 
 function Home (){
@@ -26,7 +27,7 @@ function Home (){
     return(
         <HomeContenor>
             <GlobalStyle />
-
+            
             <SlideContainer id="slideContainer">
 
             <Title animOne={animOne}/>
@@ -53,10 +54,15 @@ background-color: ${colors.primary};
 `
 
 const SlideContainer = styled.div`
-
 height: 100vh;
 overflow-y: scroll;
+overflow-x: hidden;
 scroll-snap-type: y proximity;
+
+@media (max-width: ${screenSize.mobile}) {
+	
+    scroll-snap-type: none;
+}
 
 
 `

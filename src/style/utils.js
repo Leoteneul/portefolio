@@ -8,6 +8,10 @@ export const colors = {
     tertiary: '#b64005',
     quaternary: '#36889f'
 }
+export const screenSize = {
+    tablet: '1025px',
+    mobile: '600px'
+}
 
 const GlobalStyle = createGlobalStyle`
 
@@ -21,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'AlfaSlab';
     
 }
 
@@ -56,6 +61,10 @@ a{
     color: ${colors.quaternary};
     text-decoration: none;
     font-family: 'AlfaSlab';
+
+    :hover{
+        text-decoration: underline;
+    }
 }
 
 button{

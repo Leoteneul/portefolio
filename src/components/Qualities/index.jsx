@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors } from "../../style/utils"
+import { colors, screenSize } from "../../style/utils"
 import '../../anims/animation.css'
 import TagCloud from './TagCloud';
 
@@ -18,8 +18,8 @@ function Qualities ({ animFour }){
   }
   
     return (
-        <QualitiesContenor>
-          <Test className={className3}/>
+        <QualitiesContenor id='softskills'>
+          <BackLight className={className3}/>
           <NeonWrapper>
             <Neon className={className} />
             <Neon className={className} center />
@@ -28,11 +28,10 @@ function Qualities ({ animFour }){
           </NeonWrapper>
 
             <ContentWrapper>
-                <div className="tagcloud">
+              <TagCloudWrapper>
                 <AbsoluteCircle className={className2}/>
                 <TagCloud />
-                
-             </div>
+             </TagCloudWrapper>
              <TextContenor>
               <h2>A propos de moi</h2>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -44,9 +43,9 @@ function Qualities ({ animFour }){
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                  Autem amet beatae harum dignissimos fuga natus in facere vel veniam! Voluptas, 
                 mollitia corrupti reprehenderit error tempora odit deserunt sapiente harum iure!
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                 Autem amet beatae harum dignissimos fuga natus in facere vel veniam! Voluptas, 
-                mollitia corrupti reprehenderit error tempora odit deserunt sapiente harum iure! <br />
+               
+                
+                 <br />
                 <span>La Réalité tu la crées en partie</span>
                 </p>
              </TextContenor>
@@ -67,12 +66,17 @@ position: relative;
 display: flex;
 flex-direction: column;
 align-items: center;
-
 overflow: hidden;
+
+@media (max-width: ${screenSize.mobile}) {
+	
+  height: fit-content;
+}
+
 
 
 `
-const Test = styled.div`
+const BackLight = styled.div`
 
 position: absolute;
 top: 0;
@@ -86,9 +90,14 @@ const NeonWrapper = styled.div`
 
 width: 80%;
 height: 3%;
-z-index:90;
+z-index: 90;
 display: flex;
 justify-content: space-around;
+
+@media (max-width: ${screenSize.mobile}) {
+	
+ height: 20px;
+}
 `
 
 const Neon = styled.div`
@@ -117,7 +126,42 @@ justify-content: space-around;
 height: 95%;
 /* background-color: red; */
 
+@media (max-width: ${screenSize.tablet}) {
+	
+    flex-direction: column;
+}
+
 `
+
+const TagCloudWrapper = styled.div`
+
+  background-color: rgba(55, 137, 160, 0.1);
+  box-shadow: inset 25px 25px 19px 10px rgba(255, 255, 255, 0.041), inset 0px 0px 24px 19px rgba(0, 0, 0, 0.1), inset 25px 25px 22px -11px rgba(255, 255, 255, 0.1), 0px 0px 30px 19px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  transform: rotate3d(1, 1, 1, 5deg);
+  font-size: 25px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.887);
+  overflow: hidden;
+  height: 700px;
+  width: 700px;
+
+  @media (max-width: ${screenSize.tablet}) {
+    margin-top: 30px;
+  height: 500px;
+  width: 500px;
+}
+@media (max-width: ${screenSize.mobile}) {
+	margin-top: 50px;
+  height: 300px;
+  width: 300px;
+}
+
+
+`
+
 const AbsoluteCircle = styled.div`
 
 height: 60%;
@@ -130,6 +174,10 @@ opacity: 0.1;
 z-index: -2;
 transform: rotate(-40deg);
 border-top: 15px solid ${colors.secondary};
+
+@media (max-width: ${screenSize.mobile}) {
+	top: 20px;
+}
 `
 
 const TextContenor = styled.div`
@@ -140,6 +188,16 @@ z-index: 40;
 display: flex;
 flex-direction: column;
 justify-content: center;
+
+@media (max-width: ${screenSize.tablet}) {
+	
+  height: 30%;
+  width: 80%;
+}
+@media (max-width: ${screenSize.tablet}) {
+	
+  margin: 50px 0 50px 0;
+}
 `
 
 

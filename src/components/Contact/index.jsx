@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors } from "../../style/utils"
+import { colors, screenSize } from "../../style/utils"
 import phone from '../../asset/phone.png'
 import Mailer from "./Mailer"
 
@@ -11,20 +11,28 @@ function Contact ({ animFive }){
         className = 'phoneMoveOn'
     }
 
-    
-
-
-
+    function handleCopy(e) {
+		navigator.clipboard.writeText(e.target.innerText)
+		alert('Email ajouté au presse papier')
+	}
+    function handleCV() {
+		window.location = "CV_Teneul_Léo.pdf"
+		
+	}
 
     return (
-        <ContactContenor>
+        <ContactContenor id="contact">
             
             <PhonePicture src={phone} alt="" className={className}/>
             <Text>
                 <h2>Me Contacter</h2>
-                <p>leoteneul@gmail.com</p>
+                
 
-                <Mailer></Mailer>
+                <Mailer />
+                
+                <InfoWrapper onClick={handleCopy}>leoteneul@gmail.com</InfoWrapper>
+                <InfoWrapper onClick={handleCV}>CV</InfoWrapper>
+                
                 
             </Text>
         </ContactContenor>
@@ -41,7 +49,11 @@ background-color: ${colors.primary};
 
 display: flex;
 justify-content: center;
+align-items: center;
 
+@media (max-width: ${screenSize.tablet}) {
+    flex-direction: column;
+    } 
 
 `
 
@@ -50,26 +62,50 @@ const PhonePicture = styled.img`
 
 transform-origin: top;
 margin-right: 200px;
+align-self: flex-start;
+/* background-color: green; */
+
+@media (max-width: ${screenSize.tablet}) {
+    align-self: unset;
+    margin-right: 0;
+}
 
 
 `
 const Text = styled.div`
 
-    height: 100%;
-    width: 50%;
+    height: 80%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: ${screenSize.tablet}) {
+    
+        width: 100%;
+    }
+    
+    /* background-color: red; */
+    
 
 `
 
-const Form = styled.form`
+const InfoWrapper = styled.p`
 
+align-self: flex-start;
+font-size: 18px;
+cursor: pointer;
+color: ${colors.quaternary};
+:hover{
+    text-decoration: underline;
+    transform: scale(1.3);
+}
 
-height: 40%;
-width: 100%;
-background-color: ${colors.primary};
-
+@media (max-width: ${screenSize.tablet}) {
+    padding: 0 0 20px 20px;
+}
 `
+
 
 export default Contact

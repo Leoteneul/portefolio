@@ -14,7 +14,7 @@ function Technologies ({animOne, animTwo}){
 
 
     return (
-        <TechnologiesContenor>
+        <TechnologiesContenor id="hardskills">
             
             <TransiAbso>
                 <TransiImg src={wave}></TransiImg>
@@ -42,6 +42,8 @@ justify-content: center;
 align-items: flex-end;
 scroll-snap-align: center;
 
+
+
 `
 
 const TransiImg = styled.img` 
@@ -64,12 +66,15 @@ const MidleDiv = styled.div`
 
 `
 const TransiAbso = styled.div`
+
     width: 100%;
     position: absolute;
     z-index: 20;
     top: 0;
     left: 0;
     display: flex;
+    height: 100%;
+    
     
     
 `

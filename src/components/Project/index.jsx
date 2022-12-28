@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors } from "../../style/utils"
+import { colors, screenSize } from "../../style/utils"
 import ProjectTwo from "./ProjectTwo"
 import { useState } from "react"
 import ProjectOne from "./ProjectOne"
@@ -30,7 +30,7 @@ function Project ({animThree}){
 
 
     return (
-        <ProjectContenor>
+        <ProjectContenor id="projects">
             <ChoiceContainer>
 
             <Icon icon={faArrowUpLong} onClick={() => setCount(count - 1)}/>
@@ -59,6 +59,19 @@ display: flex;
 justify-content: flex-end;
 align-items: center;
 overflow: hidden;
+position: relative;
+
+@media (max-width: ${screenSize.mobile}) {
+    
+height: fit-content;
+
+    
+}
+
+@media (max-width: ${screenSize.mobile}) {
+    align-items: flex-start;
+    
+    } 
 `
 const ChoiceContainer = styled.div`
 
@@ -69,7 +82,18 @@ const ChoiceContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* background-color: aliceblue; */
+
+    @media (max-width: ${screenSize.tablet}) {
+    width: 20%;
+    }   
+    @media (max-width: ${screenSize.mobile}) {
+    
+        height: 10%;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        z-index: 80;
+    } 
 
 `
 

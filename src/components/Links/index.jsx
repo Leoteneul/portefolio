@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { colors } from "../../style/utils"
+import { colors, screenSize } from "../../style/utils"
+import { HashLink as Link } from 'react-router-hash-link';
 
 function Links (){
 
@@ -7,10 +8,10 @@ function Links (){
     return (
         <LinksContenor>
             
-            <Link>Hardskils</Link>
-            <Link>Softskills</Link>
-            <Link>Projet</Link>
-            <Link>Contact</Link>
+            <SmoothLink smooth to="#hardskills" >Hardskills</SmoothLink>
+            <SmoothLink smooth to="#softskills">Softskills</SmoothLink>
+            <SmoothLink smooth to="#projects">Projets</SmoothLink>
+            <SmoothLink smooth to="#contact">Contact</SmoothLink>
 
         </LinksContenor>
     )
@@ -21,38 +22,66 @@ function Links (){
 
 const LinksContenor = styled.div`
 
-height: 10%;
-width: 100%;
-/* background-color: aliceblue; */
-position: absolute;
-top: 0;
-right: 0;
-z-index: 50;
+
 display: flex;
-justify-content: flex-end;
+justify-content: center;
+
+width: 100%;
+min-width: 800px;
+/* flex-wrap: wrap; */
+/* background-color: red; */
+padding: 20px;
+
+@media (max-width: ${screenSize.tablet}) {
+       flex-wrap: wrap;
+        width: 100%;
+        padding: none;
+        min-width: 0;
+	}
 
 
 `
 
-const Link = styled.button`
+const SmoothLink = styled(Link)`
 
-height: 50%;
+
+    color: #36889f;
+    font-size: 22px;
+    padding: 10px 40px 10px 40px;
+    border: 3px solid #36889f;
+    border-radius: 30px;
+    margin: 20px 20px 0 0;
+
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: 2px 1px 5px 2px rgba(0,0,0,0.74); 
+
+    :hover{
+    background-color: #36889f;
+    color: ${colors.primary};
+    text-decoration: none;
+    /* box-shadow: none;  */
+    
+}
+    
+/* height: 50%;
 font-size: 20px;
-
+padding: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
 color: ${colors.quaternary};
-margin-right: none;
+margin-right: 20px;
 border: 1px solid ${colors.quaternary};
 border-top: none;
 border-radius: 0 0 20px 20px;
 box-shadow: inset 0px -11px 15px 0px #080913;
-cursor: pointer;
+cursor: pointer; */
 
-&:hover{
-    box-shadow: none;
-    background-color: ${colors.primary};
-    color: white;
+/* &:hover{
+    
     transform: scale(1.1);
-}
+} */
 
 `
 

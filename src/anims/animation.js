@@ -21,20 +21,20 @@ export function handleScroll( setAnimOne, setAnimTwo, setAnimThree, setAnimFour,
             setAnimThree(false)
         }
         
-        if(scroll === slide[2].offsetTop){
+        if(scroll >= slide[2].offsetTop){
             
             setAnimTwo(false)
             setAnimThree(true)
             setAnimFour(false)
         }
 
-        if(scroll === slide[3].offsetTop){
+        if(scroll >= slide[3].offsetTop - 300){
             
             setAnimThree(false)
             setAnimFour(true)
             setAnimFive(false)
         }
-        if(scroll >= slide[4].offsetTop){
+        if(scroll >= slide[4].offsetTop - 200){
             
             setAnimFour(false)
             setAnimFive(true)
