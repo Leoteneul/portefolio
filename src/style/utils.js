@@ -20,6 +20,11 @@ const GlobalStyle = createGlobalStyle`
     src: url(${AlfaSlab});
 }
 
+@font-face {
+    font-family: 'QuickSand';
+    src: url('/Quicksand.ttf');
+}
+
 
 *{
     margin: 0;
@@ -32,13 +37,12 @@ const GlobalStyle = createGlobalStyle`
 
 
 h1{
-    font-size: 45px;
-    font-family: 'AlfaSlab';
+    font-size: 40px;
     letter-spacing: 3px;
 }
 
 h2{
-    font-family: 'AlfaSlab';
+    font-weight: 400;
     color: ${colors.secondary};
     letter-spacing: 3px;
     font-size: 30px;
@@ -46,21 +50,21 @@ h2{
 }
 
 h3{
-    font-family: 'AlfaSlab';
     letter-spacing: 3px;
     font-weight: lighter;
 
 }
 p{
-    font-family: 'AlfaSlab';
+    font-family: 'QuickSand';
     color: white;
-    /* margin-bottom: 50px; */
+    font-size: 18px;
     
 }
 a{
     color: ${colors.quaternary};
     text-decoration: none;
-    font-family: 'AlfaSlab';
+    word-break: break-all;
+    margin-top: 20px;
 
     :hover{
         text-decoration: underline;
@@ -68,7 +72,6 @@ a{
 }
 
 button{
-    font-family: 'AlfaSlab';
     color: #36889f;
     font-size: 22px;
     padding: 10px 40px 10px 40px;
@@ -83,17 +86,23 @@ button{
 
 button:hover{
     background-color: #36889f;
-    color: ${colors.primary};
-    /* box-shadow: none;  */
-    
+    color: ${colors.primary};    
+}
+
+strong{
+    color: #e67920;
+    font-weight: unset;
+}
+span{
+    color: #36889f;
+    text-decoration: underline;
+    font-weight: lighter;
 }
 
 
-
-
-
-
-
+input, textarea{
+    font-family: 'QuickSand';
+}
 
 
 
@@ -109,7 +118,7 @@ button:hover{
 }
 
 ::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 10px 10px white;
+    box-shadow: inset 0 0 10px 10px #36889f;
     border-radius: 5px;
     
     border: solid 2px transparent;

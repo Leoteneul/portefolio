@@ -1,69 +1,53 @@
-import styled from "styled-components"
-import Technologies from "../components/Technologies"
-import Title from "../components/Title"
-import GlobalStyle, { colors, screenSize } from "../style/utils"
-import { useEffect, useState } from "react"
-import { handleScroll } from "../anims/animation"
-import Project from "../components/Project"
-import Qualities from "../components/Qualities"
-import Contact from "../components/Contact"
-import Links from "../components/Links"
+import styled from 'styled-components'
+import Technologies from '../components/Technologies'
+import Title from '../components/Title'
+import GlobalStyle, { colors, screenSize } from '../style/utils'
+import { useEffect, useState } from 'react'
+import { handleScroll } from '../anims/animation'
+import Project from '../components/Project'
+import Qualities from '../components/Qualities'
+import Contact from '../components/Contact'
 
+function Home() {
+	const [animOne, setAnimOne] = useState(true)
+	const [animTwo, setAnimTwo] = useState(false)
+	const [animThree, setAnimThree] = useState(false)
+	const [animFour, setAnimFour] = useState(false)
+	const [animFive, setAnimFive] = useState(false)
 
-function Home (){
+	useEffect(() => {
+		handleScroll(setAnimOne, setAnimTwo, setAnimThree, setAnimFour, setAnimFive)
+	}, [])
 
-    const [animOne, setAnimOne] = useState(true)
-    const [animTwo, setAnimTwo] = useState(false)
-    const [animThree, setAnimThree] = useState(false)
-    const [animFour, setAnimFour] = useState(false)
-    const [animFive, setAnimFive] = useState(false)
-    
+	return (
+		<HomeContenor>
+			<GlobalStyle />
 
-    useEffect(() => {
-
-        handleScroll(setAnimOne, setAnimTwo, setAnimThree, setAnimFour, setAnimFive)
-    }, [])
-    
-    return(
-        <HomeContenor>
-            <GlobalStyle />
-            
-            <SlideContainer id="slideContainer">
-
-            <Title animOne={animOne}/>
-            <Technologies animOne={animOne} animTwo={animTwo}/>
-            <Project animThree={animThree}/>
-            <Qualities animFour={animFour}/>
-            <Contact animFive={animFive}/>
-
-            </SlideContainer>
-            
-            
-            
-        </HomeContenor>
-    )
+			<SlideContainer id="slideContainer">
+				<Title animOne={animOne} />
+				<Technologies animOne={animOne} animTwo={animTwo} />
+				<Project animThree={animThree} />
+				<Qualities animFour={animFour} />
+				<Contact animFive={animFive} />
+			</SlideContainer>
+		</HomeContenor>
+	)
 }
 
 export default Home
 
 const HomeContenor = styled.div`
-
-
-background-color: ${colors.primary};
-
+	background-color: ${colors.primary};
 `
 
 const SlideContainer = styled.div`
-height: 100vh;
-overflow-y: scroll;
-overflow-x: hidden;
-scroll-snap-type: y proximity;
+	height: 100vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	scroll-snap-type: y proximity;
 
-@media (max-width: ${screenSize.mobile}) {
-	
-    scroll-snap-type: none;
-}
-
-
+	@media (max-width: ${screenSize.mobile}) {
+		scroll-snap-type: none;
+	}
 `
 

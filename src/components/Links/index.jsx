@@ -30,7 +30,7 @@ width: 100%;
 min-width: 800px;
 /* flex-wrap: wrap; */
 /* background-color: red; */
-padding: 20px;
+padding: 2px;
 
 @media (max-width: ${screenSize.tablet}) {
        flex-wrap: wrap;
@@ -47,7 +47,7 @@ const SmoothLink = styled(Link)`
 
     color: #36889f;
     font-size: 22px;
-    padding: 10px 40px 10px 40px;
+    padding: 5px 30px 5px 30px;
     border: 3px solid #36889f;
     border-radius: 30px;
     margin: 20px 20px 0 0;
